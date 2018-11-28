@@ -1,0 +1,45 @@
+
+<div class="headerPerfil">
+    <div class="favoritaFotografo"></div>
+    
+   <img class="fotoFotografo" src="{{urlfotoperfil}}" alt="Juan Sus"> 
+   <div class="fotoFotografo"></div>
+
+    <div class="infoFotografo text-center">
+        <h2 class="info-titulo text-white p-5">{{nombre}}</h2>
+        <div class="info-contenido text-white">
+            <p>{{bio}}</p><br>
+            <a href="#mail" class="btn text-networks btn-link btn-just-icon btn-twitter"><i class="fa fa-envelope"></i></a>
+            <a href="#twitter" class="btn text-networks btn-link btn-just-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#facebook" class="btn text-networks btn-link btn-just-icon btn-facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#linkedin" class="btn text-networks btn-link btn-just-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
+            <a href="#instagram" class="btn text-networks btn-link btn-just-icon btn-instagram"><i class="fa fa-instagram"></i></a>
+        </div>
+    </div>
+</div>
+
+
+
+<h1 class="my-4 text-center">Galería</h1>
+<div class="tz-gallery">
+
+    <div class="row">
+        {{#each fotos}}
+        <div class="col-sm-6 col-md-4">
+            <a class="lightbox" href="{{this.url}}">
+                <img src="{{this.url}}" alt="foto">
+            </a>
+        </div>
+        {{/each}}
+    </div>
+
+</div>
+
+<div style="padding-top:2em;padding-bottom:2em;">
+    <div class="video">
+        <center>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/vomj35HdhYs" frameborder="0" allow="autoplay; encrypted-media"
+                allowfullscreen></iframe>
+        </center>
+    </div>
+</div>

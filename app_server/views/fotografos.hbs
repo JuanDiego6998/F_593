@@ -1,0 +1,75 @@
+<div class="rectangulo">
+    <img src="{{urlfotofondo}}" width="100%" height="100%">
+    <div class='text-block'>
+        <h1>{{title}}</h1>
+    </div>
+</div>
+
+<div class="cuerpo">
+
+    <div class="busqueda">
+        <br>
+        <center>
+            <br>
+            <a href="">a</a>
+            <a href="">b</a>
+            <a href="">c</a>
+            <a href="">d</a>
+            <a href="">e</a>
+            <a href="">f</a>
+            <a href="">g</a>
+            <a href="">h</a>
+            <a href="">i</a>
+            <a href="">j</a>
+            <a href="">k</a>
+            <a href="">l</a>
+            <a href="">m</a>
+            <a href="">n</a>
+            <a href="">o</a>
+            <a href="">p</a>
+            <a href="">q</a>
+            <a href="">r</a>
+            <a href="">s</a>
+            <a href="">t</a>
+            <a href="">u</a>
+            <a href="">v</a>
+            <a href="">w</a>
+            <a href="">x</a>
+            <a href="">y</a>
+            <a href="">z</a>
+
+        </center>
+    </div>
+    <div>
+        <br>
+        <br>
+    </div>
+
+    <!-- Section: Team v.2 -->
+    <section class="text-center my-5">
+
+        <div class="container">
+            <!-- Grid row -->
+            <div class="row text-center">
+                <!-- Grid column -->
+                {{#each fotografos}}
+                <div class="col-md-3 mb-0 mb-5">
+                    <a href="#Fotografo" class="linkFotografo" style="color:black; text-decoration:none;">
+                        <img src="{{this.fotolista}}" class="rounded z-depth-1-half" alt="{{this.nombre}}" style='width: 100%; height:250px;'>
+                        <h4 class="font-weight-bold my-4">{{this.nombre}}</h4>
+                        <h6 class="text-uppercase mb-3"><strong>{{this.bio}}</strong></h6>
+                    </a>
+                    <a href="#mail" class="btn text-networks btn-link btn-just-icon btn-twitter"><i class="fa fa-envelope"></i></a>
+                    <a href="#twitter" class="btn text-networks btn-link btn-just-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+                    <a href="#facebook" class="btn text-networks btn-link btn-just-icon btn-facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="#linkedin" class="btn text-networks btn-link btn-just-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
+                    <a href="#instagram" class="btn text-networks btn-link btn-just-icon btn-instagram"><i class="fa fa-instagram"></i></a>
+                </div>
+                {{/each}}
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+            <!-- Grid row -->
+        </div>
+    </section>
+</div>

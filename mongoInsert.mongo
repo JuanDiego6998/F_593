@@ -1,0 +1,190 @@
+db.fotografos.insertMany({
+    "_id": {
+    "$oid": "5bf9f4ac8a0dcf13e02127e4"
+    },
+    nombre: 'Camilo Sus',
+    bio: "Fotógrafo y videógrafo",
+    fotoperfil: "img/fotoPerfilFotografo.png",
+    correo: "juancasus@gmail.com",
+    celular: "0967996604",
+    direccion: "Cumbayá",
+    fotos: [
+        {
+            "_id": {
+                "$oid": "5bfa00f2ee733f72d4038fae"
+            },
+            "url": "img/AntelopeValley-1.JPG",
+            "titulo": "Antelope Valley 1",
+            "caption": "Formación natural en Antelope Valley",
+            "fecha": "06/08/2018",
+            "tags": [
+                "Paisaje",
+                "Naturaleza"
+            ],
+            "metadata": [
+                "Canon EOS 5D Mark IV",
+                "ISO 400",
+                "f/8",
+                "1/80",
+                "14 mm"
+            ]
+            },
+        {
+            "_id": {
+                "$oid": "5bfa00f2ee733f72d4038faf"
+            },
+            "url": "img/AntelopeValley-2.JPG",
+            "titulo": "Antelope Valley 2",
+            "caption": "Formación natural en Antelope Valley",
+            "fecha": "06/08/2018",
+            "tags": [
+                "Paisaje",
+                "Naturaleza"
+            ],
+            "metadata": [
+                "Canon EOS 5D Mark IV",
+                "ISO 400",
+                "f/4",
+                "1/15",
+                "14 mm"
+            ]
+        },
+    {
+      "_id": {
+        "$oid": "5bfa00f2ee733f72d4038fb0"
+      },
+      "url": "img/AntelopeValley-3.JPG",
+      "titulo": "Antelope Valley 3",
+      "caption": "Formación natural en Antelope Valley",
+      "fecha": "06/08/2018",
+      "tags": [
+        "Paisaje",
+        "Naturaleza"
+      ],
+      "metadata": [
+        "Canon EOS 5D Mark IV",
+        "ISO 400",
+        "f/4",
+        "1/10",
+        "14 mm"
+      ]
+    }
+  ],
+  "urldestacada": "img/AntelopeValley-1.JPG",
+  "fotolista": "img/Juan Sus.PNG"
+},
+{
+  "_id": {
+    "$oid": "5be1c2284283603369014428"
+  },
+  "nombre": "Paola Jaramillo",
+  "bio": "Fotógrafo",
+  "fotoperfil": "urlfotoperfil",
+  "correo": "jazuandy95@gmail.com",
+  "celular": "0981417060",
+  "direccion": "San Carlos",
+  "fotos": [
+    {
+      "_id": {
+        "$oid": "5bea1399c25011a4765e8073"
+      },
+      "url": "urlfoto1",
+      "titulo": "titulo1",
+      "caption": "caption1",
+      "fecha": "fecha1",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag3"
+      ],
+      "metadata": [
+        "Canon",
+        "ISO 400",
+        "f/1.4",
+        "1/250",
+        "lente1"
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "5bea1399c25011a4765e8074"
+      },
+      "url": "urlfoto2",
+      "titulo": "titulo2",
+      "caption": "caption2",
+      "fecha": "fecha2",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag3"
+      ],
+      "metadata": [
+        "Canon",
+        "ISO 800",
+        "f/2",
+        "1/1000",
+        "lente2"
+      ]
+    }
+  ],
+  "urldestacada": "img/Quilotoa_021118-1.JPG",
+  "fotolista": "img/Paola Jaramillo.PNG"
+},
+{
+  "_id": {
+    "$oid": "5be1c9164283603369014429"
+  },
+  "nombre": "Ángel Peñafiel",
+  "bio": "Fotógrafo",
+  "fotoperfil": "urlfotoperfil",
+  "correo": "angelstalinpv@gmail.com",
+  "celular": "0980169930",
+  "direccion": "Solca",
+  "fotos": [
+    {
+      "_id": {
+        "$oid": "5bea13ce3681883a607649b9"
+      },
+      "url": "urlfoto1",
+      "titulo": "titulo1",
+      "caption": "caption1",
+      "fecha": "fecha1",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag3"
+      ],
+      "metadata": [
+        "Canon",
+        "ISO 400",
+        "f/1.4",
+        "1/250",
+        "lente1"
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "5bea13ce3681883a607649ba"
+      },
+      "url": "urlfoto2",
+      "titulo": "titulo2",
+      "caption": "caption2",
+      "fecha": "fecha2",
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag3"
+      ],
+      "metadata": [
+        "Canon",
+        "ISO 800",
+        "f/2",
+        "1/1000",
+        "lente2"
+      ]
+    }
+  ],
+  "fotolista": "img/Angel Penafiel.PNG",
+  "urldestacada": "img/prin.jpg"
+}
+)

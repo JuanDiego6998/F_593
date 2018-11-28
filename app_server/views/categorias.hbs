@@ -1,0 +1,32 @@
+<div class="rectangulo">
+    <img src="{{urlfotofondo}}" width="100%" height="100%">
+    <div class='text-block'>
+        <h1>{{title}}</h1>
+    </div>
+</div>
+<br>
+<div class='container'>
+    <div class='row text-center pt-5'>
+        <div class='col-md-12'>
+            <div class='btn-group btn-group-lg btn-group-justified'>
+                {{#each categorias}}
+                <a href="categorias/{{this}}" class="btn btn-primary">{{this}}</a>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="tz-gallery">
+
+        <div class="row">
+            {{#each urlfotoslightbox}}
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="{{this}}">
+                    <img src="{{this}}" alt="fotoLightbox">
+                </a>
+            </div>
+            {{/each}}
+        </div>
+
+    </div>
+</div>
