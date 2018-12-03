@@ -18,6 +18,8 @@ var fotografosSchema = new mongoose.Schema({
     direccion:String,
     fotoperfil:{type:String, required:true},
     redes:String,
+    urldestacada:{type:String, required:true},
+    fotolista:{type:String, required:true},
     fotos:[fotosSchema]
 });
 

@@ -42,7 +42,7 @@
         <div class="container">
             <div class="row mx-auto">
                 {{#each categorias}}
-                <a type="button" href='categorias/{{this}}' class="btn btn-secondary btn-lg mx-auto my-2">{{this}}</a>
+                <a type="button" href='/categorias/{{this}}' class="btn btn-secondary btn-lg mx-auto my-2">{{this}}</a>
                 {{/each}}
             </div>
         </div>
@@ -71,12 +71,12 @@
                     <div class="card-body">
                         <h2 class="card-title">{{titulofoto}}</h2>
                         <p class="card-text">{{captionfoto}}</p>
-                        <a href="/fotografos/{{fotografos._id}}" class="btn btn-secondary">{{fotografo}} &rarr;</a>
+                        <a href="/perfil/{{id}}" class="btn btn-secondary">{{fotografo}} &rarr;</a>
                     </div>
                     <div class="card-footer text-muted">
                         {{fechafoto}}
                         {{#each tags}} 
-                        <a class="text-warning" href="/categorias/#{{this}}">{{this}}</a>
+                        <a class="text-warning" href="/categorias/{{this}}">{{this}}</a>
                         {{/each}}
                     </div>
                 </div>

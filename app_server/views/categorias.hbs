@@ -10,7 +10,7 @@
         <div class='col-md-12'>
             <div class='btn-group btn-group-lg btn-group-justified'>
                 {{#each categorias}}
-                <a href="categorias/{{this}}" class="btn btn-primary">{{this}}</a>
+                <a href="/categorias/{{this}}" class="btn btn-primary">{{this}}</a>
                 {{/each}}
             </div>
         </div>
@@ -19,13 +19,18 @@
     <div class="tz-gallery">
 
         <div class="row">
-            {{#each urlfotoslightbox}}
+            {{#each fotos}}
+            {{#each this.fotos}}
             <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="{{this}}">
-                    <img src="{{this}}" alt="fotoLightbox">
+                <a class="lightbox" href="{{this.url}}">
+                    <img src="{{this.url}}" alt="fotoLightbox">
                 </a>
             </div>
             {{/each}}
+            {{/each}}
+            {{#unless fotos}}
+            <h1 style='text-align: center;'> Click en una categoría para desplegar </h1>
+            {{/unless}}
         </div>
 
     </div>
