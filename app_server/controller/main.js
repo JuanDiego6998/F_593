@@ -6,33 +6,37 @@ var apiOptions = {
 if (process.env.NODE_ENV === 'production') {
 	apiOptions.server = 'https://F_593.herokuapp.com';
 }
-//como pasar varios parametros de body al render
-var renderHome = function (req, res, fotografos, bodyArray) {
+
+var renderHome = function (req, res, fotografos) {
 	res.render('index', {
 		title: 'Home',
 		fotografos: fotografos,
 		urldestacadas: [
-			fotografos[0].urldestacada,
-			fotografos[1].urldestacada,
-			fotografos[2].urldestacada
+			fotografos[0].fotos[0].url,
+			fotografos[1].fotos[0].url,
+			fotografos[2].fotos[0].url
 		],
 		categorias: [
-			'Naturaleza',
 			'Paisaje',
 			'Retrato',
-			'Estudio'
+			'Naturaleza',
+			'Arquitectura',
+			'Periodismo'
 		],
 		fotosdestacadas: [{
-			urlfoto: fotografos[0].urldestacada,
-			fotografo: fotografos[0].nombre
+			urlfoto: fotografos[0].fotos[0].url,
+			fotografo: fotografos[0].nombre,
+			id: fotografos[0]._id
 		},
 		{
-			urlfoto: fotografos[1].urldestacada,
-			fotografo: fotografos[1].nombre
+			urlfoto: fotografos[1].fotos[0].url,
+			fotografo: fotografos[1].nombre,
+			id: fotografos[1]._id
 		},
 		{
-			urlfoto: fotografos[2].urldestacada,
-			fotografo: fotografos[2].nombre
+			urlfoto: fotografos[2].fotos[0].url,
+			fotografo: fotografos[2].nombre,
+			id: fotografos[2]._id
 		}
 		]
 	});
@@ -40,7 +44,7 @@ var renderHome = function (req, res, fotografos, bodyArray) {
 
 module.exports.index = function (req, res) {
 	var requestOptionsOne;
-	var pathOne = apiOptions.server + '/api/fotografos';
+	var pathOne = apiOptions.server + '/api/fotografos/fotos/all';
 	requestOptionsOne = {
 		url: pathOne,
 		method: 'GET',
@@ -49,12 +53,7 @@ module.exports.index = function (req, res) {
 	request(
 		requestOptionsOne,
 		function (err, response, body) {
-			for (var i = 0; i < body.length; i++) {
-				if (body.nombre === 'Camilo Sus' || body.nombre === 'Paola Jaramillo') {
-					var bodyArray = [body.urldestacada];
-				}
-			}
-			renderHome(req, res, body, bodyArray);
+			renderHome(req, res, body);
 		}
 	);
 }
@@ -62,7 +61,7 @@ module.exports.index = function (req, res) {
 var renderPerfil = function (req, res, body) {
 	res.render('perfil', {
 		title: 'Perfil',
-		urlfotofondo: 'img/prin1080.jpg',
+		urlfotofondo: body.fotos[Math.floor(Math.random()*body.fotos.length)].url,
 		urlfotoperfil: body.fotoperfil,
 		nombre: body.nombre,
 		bio: body.bio,
@@ -72,7 +71,7 @@ var renderPerfil = function (req, res, body) {
 
 module.exports.perfil = function (req, res) {
 	var requestOptions, path;
-	path = '/api/fotografos/' + req.params.fotografoid;
+	path = '/api/fotografos/' + req.params.id;
 	requestOptions = {
 		url: apiOptions.server + path,
 		method: 'GET',
@@ -91,7 +90,7 @@ var renderFotografos = function(req, res, body){
 		title: 'Fotografos',
 		urlfotofondo: 'img/paisaje.jpg',
 		fotografos: body
-	});
+	})
 }
 
 module.exports.fotografos = function (req, res) {
@@ -107,30 +106,20 @@ module.exports.fotografos = function (req, res) {
 		function(err, response, body){
 			renderFotografos(req, res, body);
 		}
-	)
+	);
 }
 
 var renderCategorias = function (req, res, foto1) {
 	res.render('categorias', {
 		title: 'Categorias',
-		urlfotofondo: foto1[0].fotos[0].url,
+		fotos: foto1,
+		urlfotofondo: foto1[Math.floor(Math.random()*foto1.length)].fotos[Math.floor(Math.random()*foto1[Math.floor(Math.random()*foto1.length)].fotos.length)].url,
 		categorias: [
 			'Paisaje',
 			'Retrato',
 			'Naturaleza',
 			'Arquitectura',
 			'Periodismo'
-		],
-		urlfotoslightbox: [
-			'img/AntelopeValley-1.jpg',
-			'img/AntelopeValley-2.jpg',
-			'img/AntelopeValley-3.jpg',
-			'img/HighLine-1.jpg',
-			'img/HorseshoeBend-2.jpg',
-			'img/paisaje3.jpg',
-			'img/paisaje4.jpg',
-			'img/paisaje5.jpg',
-			'img/Quilotoa_021118-1.jpg'
 		]
 	});
 }
@@ -145,17 +134,6 @@ module.exports.renderCategoriasDefault = function(req, res){
 			'Naturaleza',
 			'Arquitectura',
 			'Periodismo'
-		],
-		urlfotoslightbox: [
-			'img/AntelopeValley-1.jpg',
-			'img/AntelopeValley-2.jpg',
-			'img/AntelopeValley-3.jpg',
-			'img/HighLine-1.jpg',
-			'img/HorseshoeBend-2.jpg',
-			'img/paisaje3.jpg',
-			'img/paisaje4.jpg',
-			'img/paisaje5.jpg',
-			'img/Quilotoa_021118-1.jpg'
 		]
 	});
 }

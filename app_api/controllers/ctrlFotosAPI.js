@@ -56,51 +56,32 @@ var addFoto = function (req, res, fotografo) {
     }
 };
 
-//despliega lista de todas las fotos de un fotografo especifico
+//despliega lista de todas las fotos destacadas
 module.exports.fotosList = function (req, res) {
-    if (req.params && req.params.fotografoid) {
-        fotografos
-            .findById(req.params.fotografoid)
-            .select('nombre fotos')
-            .exec(function (err, fotografo) {
-                var response, fotos;
-                if (!fotografo) {
-                    sendJsonResponse(res, 404, {
-                        "message": "fotografoid not found"
-                    });
-                    return;
-                } else if (err) {
-                    sendJsonResponse(res, 404, err);
-                    return;
-                }
-                //falta arreglar el query para todas las fotos
-                /*if (fotografo.fotos && fotografo.fotos.length > 0) {
-                    fotos = fotografo.find({});
+    fotografos
+        .find({'fotos.destacada':'true'})
+        .select('nombre')
+        .select({'fotos':{$elemMatch:{'destacada':'true'}}})
+        .exec(function (err, fotos) {
+            if (err) {
+                sendJsonResponse(res, 400, err);
+            } else {
+                if (fotos && fotos.length > 0) {
                     if (!fotos) {
                         sendJsonResponse(res, 404, {
-                            "message": "fotos not found"
+                            'message': 'tag not found'
                         });
                     } else {
-                        response = {
-                            fotografo: {
-                                nombre: fotografo.nombre,
-                                id: req.params.fotografoid
-                            },
-                            fotos: fotos
-                        };
-                        sendJsonResponse(res, 200, response);
+                        sendJsonResponse(res, 200, fotos);
                     }
                 } else {
                     sendJsonResponse(res, 404, {
-                        "message": "No fotos found"
+                        'message': 'No fotos found'
                     });
-                }*/
-            });
-    } else {
-        sendJsonResponse(res, 404, {
-            "message": "No fotografosid in request"
-        });
-    }
+                }
+            }
+        }
+        );
 };
 
 //actualiza una foto de un fotografo especifico
@@ -251,7 +232,7 @@ module.exports.fotosReadByTag = function (req, res) {
     if (req.params && req.params.tag) {
         fotografos
             .find({ 'fotos.tags': req.params.tag })
-            .select('fotos')
+            .select('nombre fotos')
             .exec(function (err, fotos) {
                 var response;
                 if (fotos && fotos.length > 0) {
@@ -263,7 +244,7 @@ module.exports.fotosReadByTag = function (req, res) {
                         response = fotos;
                         sendJsonResponse(res, 200, response);
                     }
-                } else{
+                } else {
                     sendJsonResponse(res, 404, {
                         'message': 'No fotos found'
                     });

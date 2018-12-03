@@ -7,16 +7,17 @@ router.get('/', ctrlMain.index);
 module.exports=router;
 
 var ctrlPerfil = require('../controller/main');
-router.get('/perfil',ctrlPerfil.perfil);
+router.get('/perfil/:id',ctrlPerfil.perfil);
 module.exports=router;
 
 var ctrlFotografos = require('../controller/main');
-router.get('/fotografos',ctrlFotografos.fotografos);
+router.get('/fotografos', ctrlFotografos.fotografos);
+module.exports=router;
+
+var ctrlCategoriasDefault = require('../controller/main');
+router.get('/categorias', ctrlCategoriasDefault.renderCategoriasDefault);
 module.exports=router;
 
 var ctrlCategorias = require('../controller/main');
-router.get('/categorias', ctrlCategorias.renderCategoriasDefault);
 router.get('/categorias/:tag', ctrlCategorias.categorias);
 module.exports=router;
-
-

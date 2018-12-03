@@ -17,6 +17,8 @@ module.exports.fotografosCreate = function (req, res) {
         direccion: req.body.direccion,
         fotoperfil: req.body.fotoperfil,
         redes: req.body.redes,
+        urldestacada: req.body.urldestacada,
+        fotolista: req.body.fotolista,
         fotos: [{
             url: req.body.url1,
             titulo: req.body.titulo1,
@@ -90,6 +92,8 @@ module.exports.fotografosUpdateOne = function (req, res) {
                 fotografo.correo = req.body.correo;
                 fotografo.fotoperfil = req.body.fotoperfil;
                 fotografo.redes = req.body.redes;
+                fotografo.urldestacada = req.body.urldestacada;
+                fotografo.fotolista = req.body.fotolista;
                 fotografo.save(function (err, fotografo) {
                     if (err) {
                         sendJsonResponse(res, 404, err);

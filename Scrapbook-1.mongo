@@ -1,0 +1,61 @@
+db.fotografos.update({'nombre': 'Camilo Sus'}, {'$set':{
+    fotos: [
+        {
+            "_id": "5bfa00f2ee733f72d4038fae",
+            "url": "/img/AntelopeValley-1.JPG",
+            "titulo": "Antelope Valley 1",
+            "caption": "Formación natural en Antelope Valley",
+            "fecha": "06/08/2018",
+            "destacada": "true",
+            "tags": [
+                "Paisaje",
+                "Naturaleza"
+            ],
+            "metadata": [
+                "Canon EOS 5D Mark IV",
+                "ISO 400",
+                "f/8",
+                "1/80",
+                "14 mm"
+            ]
+        },
+        {
+            "_id": "5bfa00f2ee733f72d4038faf",
+            "url": "/img/AntelopeValley-2.JPG",
+            "titulo": "Antelope Valley 2",
+            "caption": "Formación natural en Antelope Valley",
+            "fecha": "06/08/2018",
+            "destacada": "false",
+            "tags": [
+                "Paisaje",
+                "Naturaleza"
+            ],
+            "metadata": [
+                "Canon EOS 5D Mark IV",
+                "ISO 400",
+                "f/4",
+                "1/15",
+                "14 mm"
+            ]
+        },
+        {
+            "_id": "5bfa00f2ee733f72d4038fb0",
+            "url": "/img/AntelopeValley-3.JPG",
+            "titulo": "Antelope Valley 3",
+            "caption": "Formación natural en Antelope Valley",
+            "fecha": "06/08/2018",
+            "destacada": "false",
+            "tags": [
+                "Paisaje",
+                "Naturaleza"
+            ],
+            "metadata": [
+                "Canon EOS 5D Mark IV",
+                "ISO 400",
+                "f/4",
+                "1/10",
+                "14 mm"
+            ]
+        }
+    ]
+}})
