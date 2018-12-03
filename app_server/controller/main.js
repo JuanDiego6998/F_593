@@ -4,7 +4,7 @@ var apiOptions = {
 };
 
 if (process.env.NODE_ENV === 'production') {
-	apiOptions.server = 'https://F_593.herokuapp.com';
+	apiOptions.server = 'https://f-593-photoroom.herokuapp.com';
 }
 
 var renderHome = function (req, res, fotografos) {
